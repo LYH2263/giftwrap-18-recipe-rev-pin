@@ -281,13 +281,19 @@ body::before {
 }
 
 select,
+input,
 button,
 .btn {
   font: inherit;
   cursor: pointer;
 }
 
-select {
+input {
+  cursor: text;
+}
+
+select,
+input {
   min-width: 220px;
   padding: 0.55rem 0.75rem;
   border: 1px solid var(--line);
@@ -397,6 +403,17 @@ button.ribbon:hover {
 .paper-tile:hover {
   transform: translateY(-2px);
   border-color: rgba(31, 92, 87, 0.35);
+}
+
+a.paper-tile {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.paper-tile .meta {
+  display: block;
+  margin-top: 0.2rem;
 }
 
 .paper-tile strong {

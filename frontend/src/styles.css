@@ -281,19 +281,39 @@ body::before {
 }
 
 select,
+input,
 button,
 .btn {
   font: inherit;
   cursor: pointer;
 }
 
-select {
+select,
+input {
   min-width: 220px;
   padding: 0.55rem 0.75rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.72);
   color: var(--ink);
+}
+
+input[type='text'],
+input[type='number'] {
+  cursor: text;
+}
+
+label.field {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+label.field select,
+label.field input {
+  min-width: 150px;
 }
 
 button,

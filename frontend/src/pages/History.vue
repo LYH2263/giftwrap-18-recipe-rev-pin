@@ -17,13 +17,19 @@ onMounted(async () => {
 <template>
   <div class="page">
     <h1>用纸档</h1>
-    <p class="lede">算纸页「写入用纸档」后的落库结果，按次保留盒名与面积。</p>
+    <p class="lede">算纸页「写入用纸档」后的落库结果，钉住当时的配方版本、用纸与丝带数值。</p>
     <p v-if="err" class="bad">{{ err }}</p>
     <p v-else-if="!items.length" class="empty">还没有写入过。先去算纸试一单。</p>
     <ul v-else class="item-list">
       <li v-for="r in items" :key="r.id">
-        <span>{{ r.box_name }}</span>
-        <span class="meta">{{ r.result?.paper_m2 ?? '—' }} m²</span>
+        <router-link :to="`/runs/${r.id}`">
+          #{{ r.id }} {{ r.box_name }}
+          <span v-if="r.recipe_name" class="pill" style="margin-left:.5rem">
+            {{ r.recipe_name }} v{{ r.recipe_rev }}
+          </span>
+          <span v-else class="pill" style="margin-left:.5rem">手动</span>
+        </router-link>
+        <span class="meta">{{ r.paper_m2 ?? '—' }} m²</span>
       </li>
     </ul>
   </div>

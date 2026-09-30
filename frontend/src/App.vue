@@ -9,6 +9,7 @@
         <router-link to="/">盒型</router-link>
         <router-link to="/boxes">清单</router-link>
         <router-link to="/papers">纸张</router-link>
+        <router-link to="/recipes">配方</router-link>
         <router-link to="/bench">算纸</router-link>
         <router-link to="/ribbon">丝带</router-link>
         <router-link to="/overlap">折边系数</router-link>

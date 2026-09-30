@@ -6,3 +6,4 @@ class EstimateRequest(BaseModel):
     wrap_style: str = "cross"
     save: bool = False
     note: str = ""
+    recipe_id: int | None = None
